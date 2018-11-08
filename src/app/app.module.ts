@@ -1,16 +1,24 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
+import {  EmployeeService } from './employee.service';
 import { AppComponent } from './app.component';
-
+import { EmployeeComponent } from './employee/employee.component';
+import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
+import { appRoutes } from './routes';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    EmployeeComponent,
+    EmployeeDetailsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [EmployeeService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
