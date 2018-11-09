@@ -8,8 +8,8 @@ export class EmployeeService {
 }
       const Employee  =
       [
-          { name: 'Tom', id: 1 , location: 'Mumbai', Designation: 'Analyst' },
-          { name: 'Alex', id: 2 , location: 'Banglore', Designation: 'Sr.Analyst' },
-          { name: 'Steve', id: 3 , location: 'Hyderabad', Designation: 'consultant' }
+          { name: 'Tom', id: 1001 , location: 'Mumbai', Designation: 'Analyst' },
+          { name: 'Alex', id: 1002 , location: 'Banglore', Designation: 'Sr.Analyst' },
+          { name: 'Steve', id: 1003 , location: 'Hyderabad', Designation: 'consultant' }
 
              ];

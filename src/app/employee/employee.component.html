@@ -1,13 +1,15 @@
-<div class="jumbotron text-center">
-     <div class="column">
-       <div class="row">
-         <label>Enter Employee id :
-         <input type="text"  [(ngModel)]="id"><br><br>
-        </label>
+
+      <div class="container-fluid " style="background-color: #DDF1F3">
+      <form [formGroup]="eform">
+      <div class="wrap" >
+        <h5 class="text-center" style="color: #00B4CC"> Search for Employee Details</h5>
+          <div class="search">
+             <input type="text" class="searchTerm" formControlName="id" [(ngModel)]="id" placeholder="Enter Employee Id">
+             <button [routerLink]="['/employee-details', id]" type="submit" [disabled]="!eform.valid" class="searchButton">
+               <i class="fa fa-search"></i>
+            </button>
+          </div>
+       </div>
+      </form>
       </div>
-      <div class="row text-right"> 
-        <button [routerLink]="['/employee-details', id]" class="btn btn-primary btn-sm float-right ">Search
-         </button>
-        </div> 
-</div>  
-</div>       
+     
