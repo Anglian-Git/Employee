@@ -8,6 +8,9 @@ import { EmployeeComponent } from './employee/employee.component';
 import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
 import { appRoutes } from './routes';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EmpServiceService } from './emp-service.service';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +21,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserModule, FormsModule, ReactiveFormsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [EmployeeService ],
+  providers: [EmpServiceService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
