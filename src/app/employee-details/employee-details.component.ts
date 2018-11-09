@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { EmployeeService } from '../employee.service';
+import { EmpServiceService } from '../emp-service.service';
 @Component({
   selector: 'app-employee-details',
   templateUrl: './employee-details.component.html',
@@ -9,23 +10,26 @@ import { EmployeeService } from '../employee.service';
 })
 export class EmployeeDetailsComponent implements OnInit {
   employee: any;
-  constructor( private employeeService: EmployeeService,
+  empserviceservice: EmpServiceService;
+  constructor(  empserviceservice: EmpServiceService,
               private route: ActivatedRoute) {
-
+                this.empserviceservice = empserviceservice;
   }
-  id: number;
+  id: string;
   sub: any;
   event: any;
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
-      this.id = +params['id'];
-      this.event = this.employeeService.getEmployee(this.id);
+      this.id = params['id'];
+
+      this.event = this.empserviceservice.getEmployeeDetails(this.id).subscribe();
     });
   }
-
-
 }
+
+
+
 
 
 
