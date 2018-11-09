@@ -21,7 +21,7 @@ import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common
     BrowserModule, FormsModule, ReactiveFormsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [EmpServiceService ],
+  providers: [EmployeeService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
