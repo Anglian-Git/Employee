@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, NgForm } from '@angular/forms';
+
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-employee',
   templateUrl: './employee.component.html',
@@ -7,11 +9,12 @@ import { FormGroup, FormControl, Validators, NgForm } from '@angular/forms';
 })
 export class EmployeeComponent implements OnInit {
   eform: FormGroup;
-
-  constructor() { }
+showErrorText = false;
+  constructor(private  router: Router) { }
 
   ngOnInit() {
     this.eform = new FormGroup({
+      
      id : new FormControl('', Validators.required)
     });
   }
